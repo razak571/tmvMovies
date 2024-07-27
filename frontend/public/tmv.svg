@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>The Movies Vault</title>
+  <desc>Film Reel and Star Icon for The Movies Vault</desc>
+  <circle cx="50" cy="50" r="48" fill="#333"/>
+  <circle cx="50" cy="50" r="36" fill="#555"/>
+  <circle cx="50" cy="50" r="10" fill="#333"/>
+  <circle cx="50" cy="50" r="34" fill="none" stroke="#333" stroke-width="4"/>
+  
+  <polygon points="50,20 54,38 72,38 58,50 63,68 50,56 37,68 42,50 28,38 46,38" fill="orange"/>
+
+  <circle cx="30" cy="30" r="6" fill="#333"/>
+  <circle cx="70" cy="30" r="6" fill="#333"/>
+  <circle cx="30" cy="70" r="6" fill="#333"/>
+  <circle cx="70" cy="70" r="6" fill="#333"/>
+</svg>
