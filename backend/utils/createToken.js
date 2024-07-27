@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 const domain =
   process.env.NODE_ENV === "production"
-    ? `.turbogpt-server.onrender.com`
+    ? `.tmv-movies-server.onrender.com`
     : "localhost";
 
 const generateToken = (res, userId) => {
