@@ -5,8 +5,9 @@ import {
   useGetTopMoviesQuery,
   useGetRandomMovieQuery,
 } from "../../redux/api/movies";
-import MovieCard from "./MovieCard";
-import { useEffect } from "react";
+// import MovieCard from "./MovieCard";
+import React, { Suspense, useEffect } from "react";
+const MovieCard = React.lazy(() => import("./MovieCard"));
 import { useDispatch, useSelector } from "react-redux";
 import banner from "../../assets/banner1.1.jpg";
 import {
@@ -18,10 +19,11 @@ import {
 } from "../../redux/features/movies/moviesSlice";
 import { toast } from "react-toastify";
 import Footer from "../../components/Footer";
+import Loader from "../../components/Loader";
 
 const AllMovies = () => {
   const dispatch = useDispatch();
-  const { data, refetch } = useGetAllMoviesQuery();
+  const { data } = useGetAllMoviesQuery();
   const { data: genres } = useFetchAllGenreQuery();
   const { data: newMovies, refetch: newMovie } = useGetNewMoviesQuery();
   const { data: randomMovies, refetch: randomMovie } = useGetRandomMovieQuery();
@@ -171,7 +173,9 @@ const AllMovies = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
         {filteredMovies?.map((movie) => (
-          <MovieCard key={movie._id} movie={movie} />
+          <Suspense key={movie._id} fallback={<Loader />}>
+            <MovieCard key={movie._id} movie={movie} />
+          </Suspense>
         ))}
       </div>
       <Footer />

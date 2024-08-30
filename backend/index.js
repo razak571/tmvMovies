@@ -37,6 +37,9 @@ const __dirname = path.resolve();
 // app.use("/uploads", express.static(path.join(__dirname + "backend", "uploads")));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+app.get("/", (req, res) => {
+  res.json({ message: "hello" });
+});
 app.listen(PORT, async () => {
   await connectDB();
   console.log(`Server is running on port ${PORT}`);

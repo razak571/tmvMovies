@@ -1,4 +1,3 @@
-import React from "react";
 import SecondaryCard from "./SecondaryCard";
 import VideoCard from "./VideoCard";
 import RealtimeCard from "./RealtimeCard";

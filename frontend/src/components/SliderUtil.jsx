@@ -1,9 +1,13 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+// /* eslint-disable react/prop-types */
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./SliderUtil.css";
-import MovieCard from "../pages/Movies/MovieCard";
+import React, { Suspense } from "react";
+import Loader from "./Loader";
+// import MovieCard from "../pages/Movies/MovieCard";
+const MovieCard = React.lazy(() => import("../pages/Movies/MovieCard"));
 
 const SliderUtil = ({
   data,
@@ -58,7 +62,10 @@ const SliderUtil = ({
   return (
     <Slider {...settings}>
       {data?.map((movie) => (
-        <MovieCard key={movie._id} movie={movie} />
+        // eslint-disable-next-line react/jsx-key
+        <Suspense key={movie._id} fallback={<Loader />}>
+          <MovieCard key={movie._id} movie={movie} />
+        </Suspense>
       ))}
     </Slider>
   );

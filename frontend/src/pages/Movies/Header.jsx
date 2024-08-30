@@ -1,4 +1,3 @@
-import React from "react";
 import { useGetNewMoviesQuery } from "../../redux/api/movies";
 import { Link } from "react-router-dom";
 import SliderUtil from "../../components/SliderUtil";
