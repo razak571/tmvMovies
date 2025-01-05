@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "./Movies/Header";
 import MoviesContainerPage from "./Movies/MoviesContainerPage";
 import Footer from "../components/Footer";
